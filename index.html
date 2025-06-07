@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>PDF Tool</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self';">
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .drop-area {
+            border: 2px dashed #ccc;
+            border-radius: 5px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .file-list { margin-top: 10px; }
+        .file-item { background-color: #f9f9f9; border: 1px solid #eee; padding: 5px; margin-bottom: 5px; border-radius: 3px; }
+        .section { margin-bottom: 30px; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        h2 { margin-top: 0; }
+        label { display: block; margin-bottom: 5px; }
+        input[type="text"], button { padding: 8px; margin-bottom: 10px; border-radius: 3px; border: 1px solid #ccc; }
+        button { cursor: pointer; background-color: #007bff; color: white; border-color: #007bff; }
+        button:hover { background-color: #0056b3; }
+        #statusMessages { margin-top:15px; padding:10px; border:1px solid transparent; border-radius:4px; }
+        .status-success { background-color:#d4edda; border-color:#c3e6cb; color:#155724; }
+        .status-error { background-color:#f8d7da; border-color:#f5c6cb; color:#721c24; }
+        .status-info { background-color:#d1ecf1; border-color:#bee5eb; color:#0c5460; }
+    </style>
+</head>
+<body>
+    <h1>PDF Operations</h1>
+
+    <div class="section">
+        <h2>Extract Pages from PDF</h2>
+        <div id="extractDropArea" class="drop-area">
+            <p>Drag & Drop a single PDF here for page extraction</p>
+        </div>
+        <div id="extractFileInfo" class="file-list"></div>
+        <div>
+            <label for="pageRange">Page Range (e.g., 1-5, 7, 9-11):</label>
+            <input type="text" id="pageRange" placeholder="e.g., 1-3, 5">
+        </div>
+        <button id="extractButton">Extract Pages</button>
+    </div>
+
+    <div class="section">
+        <h2>Merge PDFs</h2>
+        <div id="mergeDropArea" class="drop-area">
+            <p>Drag & Drop multiple PDF files here to merge (in order)</p>
+        </div>
+        <div id="mergeFileList" class="file-list"></div>
+        <button id="mergeButton">Merge PDFs</button>
+    </div>
+
+    <div id="statusMessages"></div>
+
+    <script src="./renderer.js"></script>
+</body>
+</html>
