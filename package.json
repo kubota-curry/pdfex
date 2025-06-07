@@ -1,0 +1,27 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "pdfから好きなページを抜き出す",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx --no-install electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kubota-curry/pdfex.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kubota-curry/pdfex/issues"
+  },
+  "homepage": "https://github.com/kubota-curry/pdfex#readme",
+  "devDependencies": {
+    "electron": "^36.4.0"
+  },
+  "dependencies": {
+    "pdf-lib": "^1.17.1"
+  }
+}
